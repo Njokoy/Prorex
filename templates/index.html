@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IAI Cameroon - Plateforme de Stages Intelligente</title>
+
+    <!-- Styles -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-gradient-to-br from-blue-900 to-cyan-900" x-data="{ isMenuOpen: false, activeTestimonial: 0 }">
+    <!-- Navigation -->
+    <nav class="bg-white/5 backdrop-blur-md fixed w-full z-50 shadow-lg" data-aos="fade-down">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="flex items-center space-x-2" data-aos="fade-right">
+                    <img src="logo.png" alt="Logo IAI" class="h-10 w-10 rounded-full">
+                    <span class="text-2xl font-bold text-white">IAI Stages</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#entreprises" class="text-white hover:text-cyan-300 transition-colors" data-aos="fade-down" data-aos-delay="100">Entreprises</a>
+                    <a href="#stages" class="text-white hover:text-cyan-300 transition-colors" data-aos="fade-down" data-aos-delay="200">Stages</a>
+                    <a href="#temoignages" class="text-white hover:text-cyan-300 transition-colors" data-aos="fade-down" data-aos-delay="300">Témoignages</a>
+                    <a href="#contact" class="bg-cyan-500 px-6 py-2 rounded-full hover:bg-cyan-600 transition-colors" data-aos="fade-left">
+                        <i class="fas fa-user-graduate mr-2"></i>Espace Étudiant
+                    </a>
+                </div>
+
+                <!-- Mobile Menu -->
+                <button @click="isMenuOpen = !isMenuOpen" class="md:hidden text-white">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div class="md:hidden bg-white/5 backdrop-blur-lg" x-show="isMenuOpen" x-collapse>
+            <div class="px-6 py-4 space-y-4">
+                <a href="#entreprises" class="block text-white">Entreprises</a>
+                <a href="#stages" class="block text-white">Stages</a>
+                <a href="#contact" class="block bg-cyan-500 px-4 py-2 rounded-full text-center">Connexion</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-40 pb-24 px-6">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight"
+                data-aos="fade-up" data-aos-delay="200">
+                Votre stage professionnel
+                <span class="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">en ligne</span>
+            </h1>
+
+            <!-- Search Bar -->
+            <div class="max-w-3xl mx-auto mb-16" data-aos="fade-up" data-aos-delay="300">
+                <div class="flex bg-white rounded-full p-2 shadow-xl">
+                    <input type="text" placeholder="Rechercher par domaine, entreprise..."
+                           class="w-full px-6 py-4 rounded-full focus:outline-none">
+                    <button class="bg-cyan-500 text-white px-8 rounded-full hover:bg-cyan-600 transition-colors">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto" data-aos="zoom-in" data-aos-delay="400">
+                <div class="bg-white/10 p-6 rounded-xl backdrop-blur-sm">
+                    <div class="text-cyan-400 text-3xl mb-2">200+</div>
+                    <div class="text-white">Entreprises</div>
+                </div>
+                <!-- Ajouter 3 autres stats -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Companies -->
+    <section class="py-20 bg-white/5" id="entreprises">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-white text-center mb-12" data-aos="fade-up">Entreprises Partenaires</h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+                <div class="bg-white/10 p-6 rounded-xl backdrop-blur-sm hover:bg-white/20 transition-colors duration-300"
+                     data-aos="fade-up" data-aos-delay="100">
+                    <img src="placeholder-company.png" alt="Logo entreprise" class="w-full h-20 object-contain opacity-80 hover:opacity-100 transition-opacity">
+                </div>
+                <!-- Répéter 9 autres éléments avec data-aos-delay incrémenté -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Registration Section -->
+    <section class="py-20" id="inscription">
+      <div class="container mx-auto px-6 max-w-4xl">
+          <div class="bg-gradient-to-br from-cyan-700 to-blue-800 rounded-3xl p-8 md:p-12 shadow-2xl animate-fade-in-up">
+              <div class="text-center mb-10">
+                  <h2 class="text-3xl font-bold text-white mb-4" data-aos="zoom-in" data-aos-delay="400">Créez votre compte étudiant</h2>
+                  <p class="text-gray-200" data-aos="fade-up" data-aos-delay="300">Accédez à toutes les fonctionnalités en 1 minute</p>
+              </div>
+
+              <form class="space-y-6" data-aos="fade-left">
+                  <div class="grid md:grid-cols-2 gap-6">
+                      <input type="text" placeholder="Nom complet"
+                             class="w-full px-6 py-4 rounded-full bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400">
+
+                      <input type="email" placeholder="Adresse email"
+                             class="w-full px-6 py-4 rounded-full bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400">
+                  </div>
+
+                  <div class="grid md:grid-cols-2 gap-6">
+                      <input type="password" placeholder="Mot de passe"
+                             class="w-full px-6 py-4 rounded-full bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400">
+
+                      <input type="password" placeholder="Confirmez le mot de passe"
+                             class="w-full px-6 py-4 rounded-full bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400">
+                  </div>
+
+                  <button class="w-full bg-cyan-400 text-blue-900 px-8 py-4 rounded-full font-bold hover:bg-cyan-300 transition-colors duration-300">
+                      S'inscrire maintenant
+                  </button>
+
+                  <p class="text-center text-gray-300 text-sm">
+                      Déjà inscrit?
+                      <a href="#" class="text-cyan-300 hover:text-cyan-200">Connectez-vous ici</a>
+                  </p>
+              </form>
+          </div>
+      </div>
+  </section>
+
+    <!-- Stages Section -->
+    <section class="py-20 px-6 bg-white/5" id="stages">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-white text-center mb-12" data-aos="fade-up">Stages à la une</h2>
+
+ <!-- Grid Container -->
+ <div class="grid grid-cols-1 md:grid-cols-3 gap-8 animate-fade-in-up" data-aos="fade-down">
+  <!-- Carte Principale -->
+  <div class="md:col-span-2 group relative h-96 rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+      <img src="stage1.jpg" alt="Stage en informatique"
+           class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+          <div class="text-white">
+              <h3 class="text-xl font-bold mb-2">Développement Fullstack</h3>
+              <div class="flex items-center space-x-4 opacity-90">
+                  <span class="flex items-center">
+                      <i class="fas fa-map-marker-alt mr-2"></i>Douala
+                  </span>
+                  <span class="flex items-center">
+                      <i class="fas fa-clock mr-2"></i>6 mois
+                  </span>
+              </div>
+          </div>
+      </div>
+      <div class="absolute top-4 right-4 bg-cyan-500 text-white px-4 py-2 rounded-full text-sm">
+          Informatique
+      </div>
+  </div>
+
+  <!-- Carte Secondaire Verticale -->
+  <div class="group relative h-96 rounded-3xl overflow-hidden">
+      <div class="h-full bg-gray-800 flex flex-col">
+          <div class="flex-1 relative overflow-hidden">
+              <img src="stage2.jpg" alt="Stage en marketing"
+                   class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <div class="p-6 bg-white/5 backdrop-blur-sm">
+              <h3 class="text-white font-bold mb-2">Marketing Digital</h3>
+              <p class="text-gray-300 text-sm line-clamp-2">Stratégie de contenu et gestion de communauté...</p>
+          </div>
+      </div>
+  </div>
+
+  <!-- Carte Horizontale -->
+  <div class="md:col-span-2 group relative h-64 rounded-3xl overflow-hidden bg-gray-800 flex">
+      <div class="w-1/3 relative overflow-hidden">
+          <img src="stage3.jpg" alt="Stage en design"
+               class="h-full w-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+      </div>
+      <div class="w-2/3 p-6 flex flex-col justify-between">
+          <div>
+              <h3 class="text-white font-bold mb-2">Design Graphique</h3>
+              <p class="text-gray-300 text-sm line-clamp-3">Création d'identité visuelle et maquettes UI/UX...</p>
+          </div>
+          <div class="flex justify-between items-center text-sm text-cyan-400">
+              <span>Yaoundé</span>
+              <span>3 mois</span>
+          </div>
+      </div>
+  </div>
+
+  <!-- Carte Carrée -->
+  <div class="group relative aspect-square rounded-3xl overflow-hidden">
+      <img src="stage4.jpg" alt="Stage en finance"
+           class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+      <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+          <button class="bg-cyan-500 text-white px-8 py-3 rounded-full hover:bg-cyan-600">
+              Voir l'offre
+          </button>
+      </div>
+  </div>
+</div>
+
+<!-- Grille de Mini-cartes -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+  <div class="group relative aspect-video rounded-2xl overflow-hidden bg-gray-800">
+      <img src="stage5.jpg" alt="Stage en logistique"
+           class="h-full w-full object-cover transform group-hover:scale-110 transition-transform">
+      <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80">
+          <h4 class="text-white text-sm font-semibold">Gestion Logistique</h4>
+      </div>
+  </div>
+  <!-- Ajouter 3 autres mini-cartes similaires -->
+</div>
+        </div>
+    </section>
+
+    <!-- Témoignages Section -->
+    <section class="py-20 bg-gradient-to-br from-blue-800/30 to-cyan-800/30" id="temoignages">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-white text-center mb-12" data-aos="fade-up">Témoignages</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8"  x-data="{ activeTestimonial: 0 }" data-aos="fade-right">
+              <!-- Témoignage Principal -->
+              <div class="md:col-span-2 relative group h-96 rounded-3xl overflow-hidden transition-transform duration-500 hover:scale-[0.98] ">
+                  <div class="absolute inset-0 bg-black/40 backdrop-blur-sm p-8 flex flex-col justify-end">
+                      <div class="text-white space-y-4">
+                          <div class="text-5xl text-cyan-400 opacity-80">“</div>
+                          <p class="text-lg italic">Grâce à la plateforme IAI, j'ai découvert une entreprise qui correspondait parfaitement à mes aspirations professionnelles.</p>
+                          <div class="flex items-center space-x-4">
+                              <img src="avatar1.jpg" alt="Étudiant" class="w-12 h-12 rounded-full border-2 border-cyan-400">
+                              <div>
+                                  <h4 class="font-bold">Marie Kamga</h4>
+                                  <p class="text-sm text-cyan-300">Développeuse chez TechSolutions</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <img src="stage-tem1.jpg" alt="Stage" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+              </div>
+
+              <!-- Liste des Témoignages -->
+              <div class="space-y-6">
+                  <!-- Carte Témoignage 1 -->
+                  <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border-l-4 border-cyan-400 transform hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+                      <div class="flex items-start space-x-4">
+                          <img src="avatar2.jpg" alt="Étudiant" class="w-14 h-14 rounded-full">
+                          <div class="flex-1">
+                              <h4 class="font-bold text-white mb-2">Jean Dupont</h4>
+                              <p class="text-gray-300 text-sm line-clamp-3">"Le processus de génération de lettre de recommandation m'a sauvé des heures de travail..."</p>
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- Carte Témoignage 2 -->
+                  <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border-l-4 border-cyan-400 transform hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+                      <div class="flex items-start space-x-4">
+                          <div class="relative">
+                              <img src="avatar3.jpg" alt="Étudiant" class="w-14 h-14 rounded-full">
+                              <div class="absolute -bottom-1 -right-1 bg-cyan-400 text-black px-2 py-1 rounded-full text-xs">
+                                  <i class="fas fa-star"></i> 4.9
+                              </div>
+                          </div>
+                          <div class="flex-1">
+                              <h4 class="font-bold text-white mb-2">Aïssatou Diallo</h4>
+                              <p class="text-gray-300 text-sm line-clamp-3">"L'interface intuitive m'a permis de postuler à 5 offres en moins d'une heure..."</p>
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- Carte Vidéo -->
+                  <div class="relative aspect-video rounded-2xl overflow-hidden group">
+                      <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                          <button class="w-12 h-12 rounded-full bg-cyan-400 flex items-center justify-center hover:scale-110 transition-transform">
+                              <i class="fas fa-play text-black"></i>
+                          </button>
+                      </div>
+                      <img src="video-thumbnail.jpg" alt="Témoignage vidéo" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform">
+                  </div>
+              </div>
+          </div>
+
+          <!-- Contrôles Carousel -->
+          <div class="flex justify-center space-x-3 mt-12">
+              <button class="w-3 h-3 rounded-full bg-white/20 hover:bg-cyan-400 transition-colors"></button>
+              <button class="w-3 h-3 rounded-full bg-white/20 hover:bg-cyan-400 transition-colors"></button>
+              <button class="w-8 h-3 rounded-full bg-cyan-400"></button>
+          </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black/30 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-white" data-aos="fade-up">
+                <!-- Contenu footer -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        // Initialisation AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50,
+            easing: 'ease-in-out-quad'
+        });
+
+        // Optimisation chargement images
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.loading = 'lazy';
+                img.decoding = 'async';
+            });
+        });
+    </script>
+</body>
+</html>
